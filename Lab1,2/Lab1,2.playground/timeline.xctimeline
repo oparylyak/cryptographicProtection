@@ -2,5 +2,25 @@
 <Timeline
    version = "3.0">
    <TimelineItems>
+      <LoggerValueHistoryTimelineItem
+         documentLocation = "file:///Users/user/Documents/Crypto/Lab1,2/Lab1,2.playground#CharacterRangeLen=50&amp;CharacterRangeLoc=802&amp;EndingColumnNumber=0&amp;EndingLineNumber=24&amp;StartingColumnNumber=51&amp;StartingLineNumber=22&amp;Timestamp=692968722.212406"
+         selectedRepresentationIndex = "0">
+      </LoggerValueHistoryTimelineItem>
+      <LoggerValueHistoryTimelineItem
+         documentLocation = "file:///Users/user/Documents/Crypto/Lab1,2/Lab1,2.playground#CharacterRangeLen=11&amp;CharacterRangeLoc=1299&amp;EndingColumnNumber=0&amp;EndingLineNumber=49&amp;StartingColumnNumber=1&amp;StartingLineNumber=48&amp;Timestamp=692968722.212548"
+         selectedRepresentationIndex = "0">
+      </LoggerValueHistoryTimelineItem>
+      <LoggerValueHistoryTimelineItem
+         documentLocation = "file:///Users/user/Documents/Crypto/Lab1,2/Lab1,2.playground#CharacterRangeLen=28&amp;CharacterRangeLoc=2294&amp;EndingColumnNumber=0&amp;EndingLineNumber=83&amp;StartingColumnNumber=1&amp;StartingLineNumber=82&amp;Timestamp=692968722.212646"
+         selectedRepresentationIndex = "0">
+      </LoggerValueHistoryTimelineItem>
+      <LoggerValueHistoryTimelineItem
+         documentLocation = "file:///Users/user/Documents/Crypto/Lab1,2/Lab1,2.playground#CharacterRangeLen=25&amp;CharacterRangeLoc=1751&amp;EndingColumnNumber=0&amp;EndingLineNumber=66&amp;StartingColumnNumber=1&amp;StartingLineNumber=65&amp;Timestamp=692968722.212777"
+         selectedRepresentationIndex = "0">
+      </LoggerValueHistoryTimelineItem>
+      <LoggerValueHistoryTimelineItem
+         documentLocation = "file:///Users/user/Documents/Crypto/Lab1,2/Lab1,2.playground#CharacterRangeLen=13&amp;CharacterRangeLoc=2503&amp;EndingColumnNumber=0&amp;EndingLineNumber=93&amp;StartingColumnNumber=1&amp;StartingLineNumber=92&amp;Timestamp=692968722.212895"
+         selectedRepresentationIndex = "0">
+      </LoggerValueHistoryTimelineItem>
    </TimelineItems>
 </Timeline>
