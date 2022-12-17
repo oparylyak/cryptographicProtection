@@ -166,3 +166,99 @@ func additional(val: Int) -> Int {
     return val + 2
 }
 
+// end of temporary comented code from task 1
+
+// 2) Task 2.
+// Input data, could be changed
+
+let alphabetMatrix = [
+    ["a","b","c","d","e"],  //0
+    ["f","g","h","i","j"],  //1
+    ["k","l","m","n","o"],  //2
+    ["p","q","r","s","t"],  //3
+    ["u","v","w","x","y"]   //4
+]   //0   1   2   3   4
+let rowsP = 5
+let columnsP = 5
+
+let msg = "victory".replacingOccurrences(of: "z", with: "s") // temporary fix to work with square matrix
+let arrMsg = Array(msg).map(String.init)
+
+// find coordinates of every letter in word
+var coordinatesOfWord = [[Int]]()
+
+for i in 0...msg.count-1 {
+    for j in 0...rowsP-1 {
+        if let characterCord = alphabetMatrix[j].firstIndex(of: arrMsg[i]){
+            coordinatesOfWord.append([j,characterCord])
+        }
+    }
+}
+
+coordinatesOfWord
+
+// write encrypted sequence
+var encryptedSeq = [Int]()
+for i in 0...1 {
+    for j in 0...coordinatesOfWord.count - 1 {
+        encryptedSeq.append(coordinatesOfWord[j][i])
+    }
+}
+
+encryptedSeq
+
+// find encrypted message
+var encryptedMsg = ""
+
+var encIndex = 0
+while encIndex <= encryptedSeq.count-1 {
+    let row = encryptedSeq[encIndex]
+    let column = encryptedSeq[encIndex+1]
+    encryptedMsg += alphabetMatrix[row][column]
+    encIndex += 2
+}
+
+encryptedMsg
+
+// Start decription process
+// to perform decription we need perform same steps in opposite way
+
+let arrEncMsg = Array(encryptedMsg).map(String.init)
+
+var coordinatesOfEncryptedLetters = [Int]()
+
+for i in 0...encryptedMsg.count-1 {
+    for j in 0...rowsP-1 {
+        if let characterCord = alphabetMatrix[j].firstIndex(of: arrEncMsg[i]){
+            coordinatesOfEncryptedLetters.append(j)
+            coordinatesOfEncryptedLetters.append(characterCord)
+        }
+    }
+}
+
+coordinatesOfEncryptedLetters
+
+// create arr of correct cordinates in correct order
+var decryptedSeq = [Int]()
+let halfOfArrayCoordinate = (coordinatesOfEncryptedLetters.count/2)
+
+for i in 0...halfOfArrayCoordinate-1 {
+    let correctRow = coordinatesOfEncryptedLetters[i]
+    let correctColumn = coordinatesOfEncryptedLetters[i+halfOfArrayCoordinate]
+    decryptedSeq.append(correctRow)
+    decryptedSeq.append(correctColumn)
+}
+
+decryptedSeq
+
+var decryptedMsg = ""
+
+var decIndex = 0
+while decIndex <= decryptedSeq.count-1 {
+    let row = decryptedSeq[decIndex]
+    let column = decryptedSeq[decIndex+1]
+    decryptedMsg += alphabetMatrix[row][column]
+    decIndex += 2
+}
+
+decryptedMsg
