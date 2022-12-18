@@ -9,8 +9,9 @@
 3. Реалізувати у вигляді функції phi(m) обчислення значення функції Ейлера для заданого m
 (https://en.wikipedia.org/wiki/Euler%27s_totient_function)
 
-4. Реалізувати у вигляді функції inverse_element_2(a,p) знаходження мультиплікативного оберненого елемента a^(-1) по модулю числа n,
-використовуючи інший спосіб (теорему Ейлера або малу теорему Ферма у випадку простого числа n=p). Протестити на прикладі  a= 5 і  n=18.
+4. Реалізувати у вигляді функції inverse_element_2(a,p) знаходження мультиплікативного оберненого елемента a^(-1)
+по модулю числа n, використовуючи інший спосіб (теорему Ейлера або малу теорему Ферма у випадку простого числа n=p).
+Протестити на прикладі  a= 5 і  n=18.
 
 Протестувати роботу функцій та заскрінити.
 """
@@ -36,7 +37,9 @@ def inverse_element(a,n):
     g, x, y = gcdex(a, n)
     return x
 
-# | a= 5, n = 18, g=1, x = -7, y = 2 | Ax+Ny = GCD, 5*(-7) + 18*2 = 1 | Ax mod n = 1, 5*(-7) mod 18 = 1 | inverse_el = x
+# | a= 5, n = 18, g=1, x = -7, y = 2
+# | Ax+Ny = GCD, 5*(-7) + 18*2 = 1
+# | Ax mod n = 1, 5*(-7) mod 18 = 1 | inverse_el = x
 a, n = 5, 18
 inverse_el = inverse_element(a,n)
 print("2.1) check is inverse element correct:", a*inverse_el%n == 1)
@@ -56,7 +59,8 @@ n = 9
 print("3) phi(",n,") = ",phi(n), sep = "")
 
 #4) -----------------------------------------
-# a and n coprime positive integers, a^ phi(n) = 1 (mod m) || a ^ (phi(n) -1) mod n = a ^ (-1) mod n
+# a and n coprime positive integers, a^ phi(n) = 1 (mod m)
+# a ^ (phi(n) -1) mod n = a ^ (-1) mod n
 a, n = 5, 18
 def inverse_element_2(a,n):
     return pow(a, phi(n)-1, n)
