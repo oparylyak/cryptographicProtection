@@ -76,8 +76,10 @@ def is_prime(n, k):
 
 # Number of iterations
 k = 6
+a = 200
+b = 330
 
-print("1) All primes between 200 and 330: ")
+print("1) All primes between", a, "and", b, ": ")
 for n in range(200, 330):
     if is_prime(n, k):
         print(n, end=" ")
@@ -129,8 +131,26 @@ class RSA:
         return pow(msg, self.public_key, self.module)
 
 
-p = 223
-q = 317
+def get_two_random_primes_between(bottom, top):
+    # Number of iterations
+    k = 5
+    array = []
+
+    for n in range(bottom, top):
+        if is_prime(n, k):
+            array.append(n)
+
+    p_index = random.randint(0, len(array)-1)
+    q_index = random.randint(0, len(array)-1)
+    if p_index != q_index:
+        return array[p_index], array[q_index]
+
+    return get_two_random_primes_between(bottom, top)
+
+
+p, q = get_two_random_primes_between(200, 330)
+print("P = ", p, "Q = ", q)
+
 msg = 1997
 
 rsa = RSA()
