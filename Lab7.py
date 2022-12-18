@@ -75,12 +75,10 @@ def add_round_key(s, k):
             s[i][j] ^= k[i][j]
 
 
-# learned from https://web.archive.org/web/20100626212235/http://cs.ucsb.edu/~koc/cs178/projects/JT/aes.c
 xtime = lambda a: (((a << 1) ^ 0x1B) & 0xFF) if (a & 0x80) else (a << 1)
 
 
 def mix_single_column(a):
-    # see Sec 4.1.2 in The Design of Rijndael
     t = a[0] ^ a[1] ^ a[2] ^ a[3]
     u = a[0]
     a[0] ^= t ^ xtime(a[0] ^ a[1])
@@ -95,7 +93,6 @@ def mix_columns(s):
 
 
 def inv_mix_columns(s):
-    # see Sec 4.1.3 in The Design of Rijndael
     for i in range(4):
         u = xtime(xtime(s[i][0] ^ s[i][2]))
         v = xtime(xtime(s[i][1] ^ s[i][3]))
@@ -220,12 +217,13 @@ class AES:
         return matrix2bytes(cipher_state)
 
 
-aes = AES(b'\x00' * 16)
-message = b'\x01' * 16
+aes = AES(b'\x6c' * 8 + b'\x8c' * 8)
+message = b'\xa4' * 8 + b'\xb5' * 8
 
 ciphertext = aes.encrypt_block(message)
-decript_msg = aes.decrypt_block(ciphertext)
+decrypt_msg = aes.decrypt_block(ciphertext)
 
-print(message)
-print(ciphertext)
-print(decript_msg)
+print("Message  text: ", message)
+print("Cipher   text: ", ciphertext)  # Ciphertext
+print("Decrypted msg: ", decrypt_msg)  # Decrypted msg
+
