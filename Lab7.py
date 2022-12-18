@@ -221,7 +221,6 @@ class AES:
 
 
 aes = AES(b'\x00' * 16)
-message1 = b'\x01' * 16
 message = b'\x01' * 16
 
 ciphertext = aes.encrypt_block(message)
