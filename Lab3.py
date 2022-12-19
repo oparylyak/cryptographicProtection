@@ -1,7 +1,8 @@
-# Python3 code for the above approach
-
-# Hexadecimal to binary conversion
-
+"""
+Програмно реалізувати шифр DES.
+На вхід подається 64 біти.
+Виконати процес зашифрування і розшифрування за заданим ключем.
+"""
 
 def hex2bin(s):
     mp = {'0': "0000",
@@ -250,7 +251,7 @@ def encrypt(pt, rkb, rk):
     return cipher_text
 
 
-pt = "123456ABCD132536"
+pt = "A0B1C2D3E4F56789"
 key = "AABB09182736CCDD"
 
 # Key generation
